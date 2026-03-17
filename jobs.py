@@ -1,5 +1,4 @@
-print("🔥 JOBS.PY LOADED 🔥")
-from nautobot.extras.jobs import Job
+from nautobot.apps.jobs import Job, register_jobs
 import subprocess
 
 
@@ -24,4 +23,4 @@ class RunAnsiblePlaybook(Job):
             raise Exception("Ansible playbook failed")
 
 
-jobs = [RunAnsiblePlaybook]
+register_jobs(RunAnsiblePlaybook)
