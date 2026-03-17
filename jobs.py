@@ -8,8 +8,7 @@ class RunAnsiblePlaybook(Job):
         name = "Run Ansible Playbook"
         description = "Execute an Ansible playbook"
 
-    def run(self, data, commit):
-
+    def run(self):
         result = subprocess.run(
             ["ansible-playbook", "/opt/playbooks/test.yml"],
             capture_output=True,
